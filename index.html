@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IND TRAVEL — One India. One Trusted Travel Ecosystem.</title>
+  
+  <!-- Meta tags for Hackathon & Identity -->
+  <meta name="description" content="IND TRAVEL: A unified digital tourism intelligence, discovery and trust layer for India. Designed for Smart India Hackathon.">
+  <meta name="theme-color" content="#0B1F3A">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0B1F3A',
+              navyLight: '#15325B',
+              saffron: '#FF9933',
+              saffronDark: '#E67A18',
+              green: '#138808',
+              gold: '#D4A017',
+              ivory: '#FFFDF7',
+              sand: '#F7F3E9',
+              charcoal: '#1E293B'
+            }
+          },
+          fontFamily: {
+            heritage: ['Cinzel', 'serif'],
+            display: ['"Cinzel Decorative"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js CDN for Tourism Intelligence -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Style Sheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-brand-ivory text-brand-charcoal antialiased min-h-screen flex flex-col">
+
+  <!-- =====================================================================
+       TOP NATIONAL GOVERNMENT POSITIONING BANNER (Realistic & Transparent)
+       ===================================================================== -->
+  <div class="bg-brand-navy border-b border-brand-gold/20 text-brand-ivory px-4 py-1.5 text-[11px] flex flex-wrap items-center justify-between gap-2 z-50">
+    <div class="flex items-center gap-2 max-w-4xl">
+      <span class="inline-block w-2 h-2 rounded-full bg-brand-green safe-dot"></span>
+      <span class="font-medium tracking-wide">
+        <strong>IND TRAVEL CONCEPT</strong> • Potential Public Digital Infrastructure for Tourism • Future-Ready for Tourism Authority Integration
+      </span>
+    </div>
+    <div class="flex items-center gap-4 text-xs font-semibold">
+      <span class="text-brand-saffron flex items-center gap-1">
+        <i data-lucide="phone-call" class="w-3 h-3"></i> 24x7 Tourist Helpline: 1363
+      </span>
+      <span class="text-slate-300 hidden md:inline">|</span>
+      <span class="text-emerald-400 hidden md:flex items-center gap-1">
+        <i data-lucide="shield" class="w-3 h-3"></i> Emergency: 112
+      </span>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MAIN NAVIGATION BAR
+       ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-brand-navy/95 backdrop-blur-md border-b border-white/10 shadow-lg text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Left: Brand Logo -->
+        <a href="#home" data-navigate="home" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-saffron via-brand-gold to-amber-300 flex items-center justify-center text-brand-navy shadow-md shadow-brand-saffron/20 group-hover:scale-105 transition-transform">
+            <!-- Pin + Chakra Geometry -->
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-heritage text-xl md:text-2xl font-extrabold tracking-wider text-white">IND TRAVEL</span>
+              <span class="text-base" title="Proudly Indian">🇮🇳</span>
+            </div>
+            <span class="text-[10px] tracking-widest text-brand-saffron uppercase font-medium block -mt-1 font-sans">
+              One India. One Ecosystem.
+            </span>
+          </div>
+        </a>
+
+        <!-- Middle: Navigation Links (Desktop) -->
+        <nav class="hidden xl:flex items-center space-x-1 lg:space-x-2 text-sm font-medium">
+          <a href="#explore" data-target="explore" class="nav-link px-3 py-2 rounded-lg hover:text-brand-saffron transition-colors">Explore India</a>
+          <a href="#planner" data-target="planner" class="nav-link px-3 py-2 rounded-lg hover:text-brand-saffron transition-colors flex items-center gap-1">
+            <span>AI Trip Planner</span>
+            <span class="text-[9px] bg-brand-saffron/20 text-brand-saffron border border-brand-saffron/40 px-1 rounded">AI</span>
+          </a>
+          <a href="#scanner" data-target="scanner" class="nav-link px-3 py-2 rounded-lg hover:text-brand-saffron transition-colors flex items-center gap-1">
+            <span>Heritage AI</span>
+            <i data-lucide="scan" class="w-3.5 h-3.5 text-brand-gold"></i>
+          </a>
+          <a href="#assistant" data-target="assistant" class="nav-link px-3 py-2 rounded-lg hover:text-brand-saffron transition-colors">AI Assistant</a>
+          <a href="#safety" data-target="safety" class="nav-link px-3 py-2 rounded-lg hover:text-brand-saffron transition-colors flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Safety</span>
+          </a>
+          <a href="#intelligence" data-target="intelligence" class="nav-link px-3 py-2 rounded-lg hover:text-brand-saffron transition-colors">Tourism Insights</a>
+          <a href="#local" data-target="local" class="nav-link px-3 py-2 rounded-lg hover:text-brand-saffron transition-colors">Local Network</a>
+          <a href="#international" data-target="international" class="nav-link px-3 py-2 rounded-lg hover:text-brand-saffron transition-colors">Global Hub</a>
+        </nav>
+
+        <!-- Right Side: SOS Action, Language Selector & Profile -->
+        <div class="flex items-center gap-3">
+          <!-- SOS Emergency Quick Pill -->
+          <button class="btn-trigger-sos sos-pulse-btn px-3.5 py-1.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-lg shadow-red-600/30 transition-transform active:scale-95" title="Instant Tourist Emergency Assistance">
+            <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+            <span class="hidden sm:inline">SOS</span>
+          </button>
+
+          <!-- Language Selector -->
+          <div class="relative hidden sm:block">
+            <select id="global-lang-select" class="bg-white/10 text-white text-xs font-medium py-1.5 px-3 rounded-lg border border-white/20 focus:outline-none focus:border-brand-saffron cursor-pointer">
+              <option value="en" class="text-slate-900">English</option>
+              <option value="hi" class="text-slate-900">हिंदी (Hindi)</option>
+              <option value="te" class="text-slate-900">తెలుగు (Telugu)</option>
+              <option value="ta" class="text-slate-900">தமிழ் (Tamil)</option>
+              <option value="kn" class="text-slate-900">ಕನ್ನಡ (Kannada)</option>
+              <option value="ml" class="text-slate-900">മലയാളം (Malayalam)</option>
+              <option value="bn" class="text-slate-900">বাংলা (Bengali)</option>
+              <option value="mr" class="text-slate-900">मराठी (Marathi)</option>
+              <option value="fr" class="text-slate-900">Français</option>
+              <option value="de" class="text-slate-900">Deutsch</option>
+              <option value="es" class="text-slate-900">Español</option>
+            </select>
+          </div>
+
+          <!-- Profile / Persona Switcher Trigger -->
+          <button id="btn-profile-trigger" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-xl border border-white/20 text-xs font-semibold transition-colors">
+            <i data-lucide="user-circle-2" class="w-4 h-4 text-brand-gold"></i>
+            <span class="hidden md:inline">Sign In / Role</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="indian-tricolor-line"></div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN VIEW CONTAINER (Single Page Application Router Views)
+       ===================================================================== -->
+  <main class="flex-1">
+
+    <!-- -----------------------------------------------------------------
+         VIEW 1: LANDING PAGE (#home)
+         ----------------------------------------------------------------- -->
+    <section id="view-home" class="view-section active">
+      
+      <!-- HERO SECTION -->
+      <div class="relative bg-brand-navy min-h-[620px] lg:min-h-[700px] flex items-center overflow-hidden bg-mandala-pattern text-white py-16 lg:py-24">
+        <!-- Ambient decorative elements -->
+        <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-brand-saffron/15 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-brand-gold/15 blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Hero Column -->
+            <div class="lg:col-span-7 space-y-6">
+              
+              <!-- Subtle Tagline Badge -->
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-brand-gold text-xs font-semibold tracking-wide">
+                <i data-lucide="sparkles" class="w-4 h-4 text-brand-saffron"></i>
+                <span>One India. One Trusted Travel Ecosystem.</span>
+              </div>
+
+              <!-- Main Hero Heading -->
+              <h1 class="hero-heading font-heritage text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                Explore India.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-saffron via-amber-300 to-brand-gold">
+                  Smarter. Safer. Together.
+                </span>
+              </h1>
+
+              <!-- Supporting Paragraph -->
+              <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-sans">
+                From the snowy heights of the Himalayas to the tranquil Kerala backwaters, experience India’s living heritage, diverse cultures, and authentic local communities with one unified, intelligent travel companion.
+              </p>
+
+              <!-- Global Search Bar -->
+              <div class="relative max-w-xl">
+                <div class="bg-white/10 backdrop-blur-md p-1.5 rounded-2xl border border-white/20 shadow-2xl flex items-center">
+                  <div class="pl-3.5 pr-2 text-brand-gold">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                  </div>
+                  <input 
+                    type="text" 
+                    id="global-search-input" 
+                    placeholder="Where do you want to explore? (e.g. Hyderabad, Jaipur, Hampi, Kerala)" 
+                    class="w-full bg-transparent text-white placeholder:text-slate-400 text-sm focus:outline-none py-2"
+                  >
+                  <button data-navigate="explore" class="shrink-0 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-saffron to-brand-saffronDark text-brand-navy font-bold text-xs uppercase tracking-wider hover:opacity-95 shadow-md shadow-brand-saffron/30 transition-all flex items-center gap-1">
+                    <span>Search</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+
+                <!-- Autocomplete Dropdown -->
+                <div id="global-search-dropdown" class="absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden z-30 hidden max-h-80 overflow-y-auto">
+                  <!-- Injected via App.bindGlobalEvents -->
+                </div>
+
+                <!-- Quick Search Suggestions -->
+                <div class="flex flex-wrap items-center gap-2 pt-3 text-xs text-slate-300">
+                  <span class="text-slate-400">Popular:</span>
+                  <button onclick="TripPlanner.setDestination('Hyderabad')" class="hover:text-brand-saffron underline decoration-dotted">Hyderabad</button>
+                  <span>•</span>
+                  <button onclick="TripPlanner.setDestination('Jaipur')" class="hover:text-brand-saffron underline decoration-dotted">Jaipur</button>
+                  <span>•</span>
+                  <button onclick="TripPlanner.setDestination('Varanasi')" class="hover:text-brand-saffron underline decoration-dotted">Varanasi</button>
+                  <span>•</span>
+                  <button onclick="TripPlanner.setDestination('Hampi')" class="hover:text-brand-saffron underline decoration-dotted">Hampi</button>
+                  <span>•</span>
+                  <button onclick="TripPlanner.setDestination('Kerala')" class="hover:text-brand-saffron underline decoration-dotted">Kerala</button>
+                  <span>•</span>
+                  <button onclick="TripPlanner.setDestination('Ladakh')" class="hover:text-brand-saffron underline decoration-dotted">Ladakh</button>
+                </div>
+              </div>
+
+              <!-- Primary CTAs -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <button data-navigate="planner" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-brand-saffron via-amber-400 to-brand-gold text-slate-950 font-bold text-sm shadow-xl shadow-brand-saffron/25 hover:shadow-brand-saffron/40 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  <span>Plan My Journey</span>
+                </button>
+                <button data-navigate="explore" class="px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 hover:border-white/40 transition-all flex items-center gap-2">
+                  <i data-lucide="compass" class="w-4 h-4 text-brand-gold"></i>
+                  <span>Explore India</span>
+                </button>
+              </div>
+
+              <!-- Live Trust & Scale Micro-Metrics -->
+              <div class="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 max-w-lg">
+                <div>
+                  <span class="text-xl md:text-2xl font-heritage font-bold text-white block">3,690+</span>
+                  <span class="text-xs text-slate-400">ASI Monuments Cataloged</span>
+                </div>
+                <div>
+                  <span class="text-xl md:text-2xl font-heritage font-bold text-white block">13 Languages</span>
+                  <span class="text-xs text-slate-400">Indian & Global AI Voice</span>
+                </div>
+                <div>
+                  <span class="text-xl md:text-2xl font-heritage font-bold text-emerald-400 flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 24x7
+                  </span>
+                  <span class="text-xs text-slate-400">Tourist Safety Desk</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Hero Column: Visual Heritage Collage Card -->
+            <div class="lg:col-span-5 relative">
+              <div class="relative mx-auto max-w-md lg:max-w-none">
+                
+                <!-- Main Featured Monument Card -->
+                <div class="arch-card-top overflow-hidden border border-brand-gold/40 shadow-2xl bg-slate-900/90 relative group">
+                  <img src="https://images.unsplash.com/photo-1572445271230-a78b5944a659?auto=format&fit=crop&w=1000&q=80" alt="Charminar Hyderabad" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                  <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
+                  
+                  <div class="absolute bottom-5 left-5 right-5 text-white">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-brand-gold text-brand-navy">
+                        Featured Heritage
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Crowd: Optimal
+                      </span>
+                    </div>
+                    <h3 class="font-heritage text-2xl font-bold">Charminar, Hyderabad</h3>
+                    <p class="text-xs text-amber-200/90 font-serif italic mt-0.5">"The Arc de Triomphe of the East"</p>
+                    <div class="mt-3 flex items-center justify-between text-xs text-slate-300 pt-2 border-t border-white/10">
+                      <span>Era: 1591 CE • Qutb Shahi</span>
+                      <button onclick="TripPlanner.setDestination('Hyderabad')" class="text-brand-saffron font-bold flex items-center gap-1 hover:underline">
+                        Generate Itinerary <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Card 1: AI Scanner Widget Teaser -->
+                <div class="absolute -top-6 -left-6 bg-brand-navy/90 backdrop-blur-md p-3.5 rounded-2xl border border-brand-gold/30 shadow-xl hidden sm:flex items-center gap-3 text-xs max-w-xs">
+                  <div class="w-9 h-9 rounded-xl bg-brand-saffron/20 border border-brand-saffron/40 text-brand-saffron flex items-center justify-center shrink-0">
+                    <i data-lucide="scan" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-brand-gold font-bold block">Heritage AI Vision</span>
+                    <span class="text-slate-300 text-[11px]">Instant ASI Monument Detection</span>
+                  </div>
+                </div>
+
+                <!-- Floating Card 2: Multilingual AI Assistant Teaser -->
+                <div class="absolute -bottom-6 -right-4 bg-brand-navy/90 backdrop-blur-md p-3.5 rounded-2xl border border-emerald-500/30 shadow-xl hidden sm:flex items-center gap-3 text-xs max-w-xs">
+                  <div class="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0">
+                    <i data-lucide="languages" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-emerald-300 font-bold block">10 Indian Languages</span>
+                    <span class="text-slate-300 text-[11px]">Voice & Dialect Companion</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM & POSITIONING SECTION -->
+      <div class="py-16 bg-brand-sand border-b border-brand-border mandala-watermark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300/60">
+              The Challenge We Are Solving
+            </span>
+            <h2 class="font-heritage text-3xl sm:text-4xl font-bold text-brand-navy mt-3">
+              India's Tourism Experience is Fragmented
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2">
+              A traveler in India currently juggles 6 to 8 disconnected apps for navigation, translations, state government websites, safety, local guides, and emergency numbers.
+            </p>
+          </div>
+
+          <!-- Problem Grid vs IND Solution -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            
+            <!-- Fragmented Realities -->
+            <div class="bg-white p-8 rounded-3xl border border-red-200 shadow-sm relative overflow-hidden">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-red-100 text-red-700 flex items-center justify-center">
+                  <i data-lucide="x-circle" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-heritage text-lg font-bold text-red-950">The Fragmented Tourist Journey</h3>
+                  <span class="text-xs text-red-600">Disconnected Apps & High Friction</span>
+                </div>
+              </div>
+              <ul class="space-y-3.5 text-sm text-slate-700">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="alert-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
+                  <span><strong>Navigation vs. Cultural Context:</strong> Google Maps shows routes, but lacks authentic historical folklore, architectural secrets, and audio guides.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="alert-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
+                  <span><strong>Language & Dialect Barriers:</strong> Generic translation tools fail on nuanced regional Indian dialects, transit jargon (RAC/WL), and local idioms.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="alert-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
+                  <span><strong>Local Community Exclusion:</strong> Traditional commercial OTAs capture commissions, while authentic village artisans, weavers, and heritage guides stay invisible.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="alert-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
+                  <span><strong>Unpredictable Crowd Surges:</strong> Popular hotspots face severe overcrowding without predictive alerts or alternative time recommendations.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- IND Travel Solution -->
+            <div class="bg-gradient-to-br from-brand-navy to-slate-900 text-white p-8 rounded-3xl border border-brand-gold/40 shadow-xl relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-48 h-48 rounded-full bg-brand-gold/10 blur-2xl"></div>
+              <div class="flex items-center gap-3 mb-6 relative z-10">
+                <div class="w-10 h-10 rounded-xl bg-brand-gold/20 text-brand-gold flex items-center justify-center border border-brand-gold/40">
+                  <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-heritage text-lg font-bold text-white">The IND Travel Ecosystem</h3>
+                  <span class="text-xs text-brand-saffron">Unified Tourism Intelligence & Trust Layer</span>
+                </div>
+              </div>
+              <ul class="space-y-3.5 text-sm text-slate-300 relative z-10">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-brand-saffron shrink-0 mt-0.5"></i>
+                  <span><strong>One Intelligent Gateway:</strong> Fuses AI itinerary synthesis, camera heritage recognition, and audio guides into one cohesive app.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-brand-saffron shrink-0 mt-0.5"></i>
+                  <span><strong>Multilingual India Companion:</strong> Speaks and understands 10 Indian and 3 foreign languages with voice recognition and spoken responses.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-brand-saffron shrink-0 mt-0.5"></i>
+                  <span><strong>Grassroots Community Network:</strong> Gives direct visibility and verified demo badging to local guides, homestays, and handloom artisans.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-brand-saffron shrink-0 mt-0.5"></i>
+                  <span><strong>Predictive Crowd Intelligence:</strong> Monitors site capacities to suggest alternate visiting windows, supporting sustainable destination management.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- FOUR-STAKEHOLDER ECOSYSTEM VISUALIZER -->
+      <div class="py-16 bg-white border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-brand-navy bg-brand-navy/5 border border-brand-navy/15">
+              Connected Architecture
+            </span>
+            <h2 class="font-heritage text-3xl sm:text-4xl font-bold text-brand-navy mt-3">
+              Four-Stakeholder Unified Ecosystem
+            </h2>
+            <p class="text-slate-600 text-sm mt-2">
+              "One Connected Digital Tourism Infrastructure for India"
+            </p>
+          </div>
+
+          <!-- Central Connected Diagram -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            
+            <!-- Stakeholder 1: Domestic Tourists -->
+            <div class="bg-brand-ivory p-6 rounded-2xl border border-brand-border hover:border-brand-gold transition-all shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl mb-4 font-bold">
+                  🇮🇳
+                </div>
+                <h3 class="font-heritage text-base font-bold text-slate-900">Domestic Tourists</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Personalized AI trip planning, regional cultural understanding, transit assistance, and transparent local experiences.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-200/60 text-xs text-amber-700 font-semibold flex items-center gap-1">
+                <span>Personalized Journeys</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </div>
+            </div>
+
+            <!-- Stakeholder 2: International Tourists -->
+            <div class="bg-brand-ivory p-6 rounded-2xl border border-brand-border hover:border-brand-gold transition-all shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center text-xl mb-4 font-bold">
+                  🌍
+                </div>
+                <h3 class="font-heritage text-base font-bold text-slate-900">International Tourists</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Currency converter with authorized forex guidance, diplomatic mission directories, cultural etiquette guides, and multilingual translation.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-200/60 text-xs text-blue-700 font-semibold flex items-center gap-1">
+                <span>Safe Global Entry</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </div>
+            </div>
+
+            <!-- Stakeholder 3: Local Tourism Ecosystem -->
+            <div class="bg-brand-ivory p-6 rounded-2xl border border-brand-border hover:border-brand-gold transition-all shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl mb-4 font-bold">
+                  🤝
+                </div>
+                <h3 class="font-heritage text-base font-bold text-slate-900">Local Tourism Ecosystem</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Direct digital visibility for verified guides, heritage homestays, traditional weavers, and cultural performers with zero commission gouging.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-200/60 text-xs text-emerald-700 font-semibold flex items-center gap-1">
+                <span>Direct Community Benefit</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </div>
+            </div>
+
+            <!-- Stakeholder 4: Tourism Authorities (Future-Ready) -->
+            <div class="bg-brand-ivory p-6 rounded-2xl border border-brand-border hover:border-brand-gold transition-all shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-800 flex items-center justify-center text-xl mb-4 font-bold">
+                  🏛
+                </div>
+                <h3 class="font-heritage text-base font-bold text-slate-900">Tourism Authorities</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Future-ready telemetry for crowd awareness, destination trend analysis, visitor sentiment metrics, and sustainable heritage preservation.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-200/60 text-xs text-indigo-700 font-semibold flex items-center gap-1">
+                <span>Data-Informed Governance</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Central Ecosystem Vision Statement -->
+          <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-brand-navy via-slate-900 to-brand-navy text-white text-center border border-brand-gold/30">
+            <p class="font-heritage text-lg md:text-xl font-bold">
+              "IND Travel does not replace private booking engines — it connects fragmented tourism experiences into one intelligent national-scale trust layer."
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WHY IND TRAVEL? COMPARISON MATRIX -->
+      <div class="py-16 bg-brand-ivory border-b border-brand-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="font-heritage text-3xl font-bold text-brand-navy">
+              Why IND Travel?
+            </h2>
+            <p class="text-slate-600 text-sm mt-1">
+              A clear, neutral comparison between traditional commercial OTAs and our unified digital public infrastructure vision.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl border border-brand-border shadow-md overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm">
+                <thead>
+                  <tr class="bg-brand-navy text-white border-b border-brand-gold/20">
+                    <th class="py-4 px-6 font-heritage font-bold text-sm">Capability / Dimension</th>
+                    <th class="py-4 px-6 font-heritage font-bold text-sm text-slate-300">Traditional Commercial Platforms</th>
+                    <th class="py-4 px-6 font-heritage font-bold text-sm text-brand-saffron bg-brand-navyLight">IND Travel Ecosystem</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 text-xs sm:text-sm">
+                  <tr class="hover:bg-amber-50/20">
+                    <td class="py-4 px-6 font-semibold text-slate-900">Primary Focus</td>
+                    <td class="py-4 px-6 text-slate-600">Transactional ticketing & hotel sales</td>
+                    <td class="py-4 px-6 font-semibold text-brand-navy bg-amber-50/40">Unified discovery, intelligence & community trust</td>
+                  </tr>
+                  <tr class="hover:bg-amber-50/20">
+                    <td class="py-4 px-6 font-semibold text-slate-900">Cultural & Heritage Depth</td>
+                    <td class="py-4 px-6 text-slate-600">Basic catalog descriptions</td>
+                    <td class="py-4 px-6 font-semibold text-brand-navy bg-amber-50/40">AI Heritage Camera Scanner + Multilingual Audio Guides</td>
+                  </tr>
+                  <tr class="hover:bg-amber-50/20">
+                    <td class="py-4 px-6 font-semibold text-slate-900">Multilingual Accessibility</td>
+                    <td class="py-4 px-6 text-slate-600">English + 1-2 major languages text only</td>
+                    <td class="py-4 px-6 font-semibold text-brand-navy bg-amber-50/40">10 Indian languages + 3 Global languages with voice</td>
+                  </tr>
+                  <tr class="hover:bg-amber-50/20">
+                    <td class="py-4 px-6 font-semibold text-slate-900">Tourist Safety Infrastructure</td>
+                    <td class="py-4 px-6 text-slate-600">Commercial travel insurance upsells</td>
+                    <td class="py-4 px-6 font-semibold text-brand-navy bg-amber-50/40">Integrated SOS Guardian, live GPS tracking & 112/1363 links</td>
+                  </tr>
+                  <tr class="hover:bg-amber-50/20">
+                    <td class="py-4 px-6 font-semibold text-slate-900">Local Community Inclusion</td>
+                    <td class="py-4 px-6 text-slate-600">High commissions (15–25%), favors large chains</td>
+                    <td class="py-4 px-6 font-semibold text-brand-navy bg-amber-50/40">Direct artisan & local guide promotion with 0% toll</td>
+                  </tr>
+                  <tr class="hover:bg-amber-50/20">
+                    <td class="py-4 px-6 font-semibold text-slate-900">Crowd & Destination Management</td>
+                    <td class="py-4 px-6 text-slate-600">No destination crowd capacity awareness</td>
+                    <td class="py-4 px-6 font-semibold text-brand-navy bg-amber-50/40">Real-time crowd monitoring & dynamic diversion algorithms</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- NATIONAL IMPACT SECTION -->
+      <div class="py-16 bg-brand-sand border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="font-heritage text-3xl font-bold text-brand-navy">
+              Impact Across Three Dimensions
+            </h2>
+            <p class="text-slate-600 text-sm mt-1">
+              Building a more resilient, equitable, and intelligent tourism economy for India.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Impact 1 -->
+            <div class="bg-white p-6 rounded-2xl border border-brand-border shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-brand-saffron/20 text-brand-saffronDark flex items-center justify-center font-bold text-lg mb-4">
+                01
+              </div>
+              <h3 class="font-heritage text-lg font-bold text-slate-900">For Tourists</h3>
+              <ul class="mt-3 space-y-2 text-xs text-slate-600">
+                <li class="flex items-center gap-2">• Effortless crowd-optimized AI trip planning</li>
+                <li class="flex items-center gap-2">• Deeper cultural storytelling & live audio guides</li>
+                <li class="flex items-center gap-2">• Language barrier elimination in 13 languages</li>
+                <li class="flex items-center gap-2">• Reassuring safety network & instant SOS support</li>
+              </ul>
+            </div>
+
+            <!-- Impact 2 -->
+            <div class="bg-white p-6 rounded-2xl border border-brand-border shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-brand-green/20 text-brand-green flex items-center justify-center font-bold text-lg mb-4">
+                02
+              </div>
+              <h3 class="font-heritage text-lg font-bold text-slate-900">For Local Economy</h3>
+              <ul class="mt-3 space-y-2 text-xs text-slate-600">
+                <li class="flex items-center gap-2">• Direct discovery for traditional handloom weavers</li>
+                <li class="flex items-center gap-2">• Fair compensation for certified local heritage guides</li>
+                <li class="flex items-center gap-2">• Expansion of rural, tribal & experiential homestays</li>
+                <li class="flex items-center gap-2">• Retention of tourist spending within communities</li>
+              </ul>
+            </div>
+
+            <!-- Impact 3 -->
+            <div class="bg-white p-6 rounded-2xl border border-brand-border shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-brand-navy/15 text-brand-navy flex items-center justify-center font-bold text-lg mb-4">
+                03
+              </div>
+              <h3 class="font-heritage text-lg font-bold text-slate-900">For Tourism Ecosystem</h3>
+              <ul class="mt-3 space-y-2 text-xs text-slate-600">
+                <li class="flex items-center gap-2">• Actionable visitor density & crowd indicators</li>
+                <li class="flex items-center gap-2">• Dynamic visitor dispersion to protect monuments</li>
+                <li class="flex items-center gap-2">• Unified data intelligence for tourism planning</li>
+                <li class="flex items-center gap-2">• Future-ready public digital infrastructure</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         VIEW 2: EXPLORE INDIA (#explore)
+         ----------------------------------------------------------------- -->
+    <section id="view-explore" class="view-section">
+      <div class="bg-brand-navy py-12 text-white border-b border-brand-gold/20 bg-mandala-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="text-xs text-brand-saffron font-bold uppercase tracking-wider">Interactive Geographic Discovery</span>
+            <h1 class="font-heritage text-3xl sm:text-4xl font-bold mt-1">Explore India's Living Tapestry</h1>
+            <p class="text-slate-300 text-sm mt-2">
+              From Himalayan snowlines to sun-kissed coastal lagoons, discover India by geographic regions and cultural themes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Region Filter Tabs -->
+        <div class="mb-6">
+          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Explore by Region</label>
+          <div class="flex flex-wrap items-center gap-2">
+            <button data-region="All" class="explore-region-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white transition-all shadow-sm">
+              All Regions
+            </button>
+            <button data-region="North India" class="explore-region-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">
+              North India
+            </button>
+            <button data-region="South India" class="explore-region-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">
+              South India
+            </button>
+            <button data-region="West India" class="explore-region-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">
+              West India
+            </button>
+            <button data-region="East India" class="explore-region-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">
+              East India
+            </button>
+            <button data-region="North-East India" class="explore-region-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">
+              North-East India
+            </button>
+          </div>
+        </div>
+
+        <!-- Theme Category Filter Pills (10 Themes) -->
+        <div class="mb-8">
+          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Curated Travel Themes</label>
+          <div class="flex flex-wrap items-center gap-2">
+            <button data-theme="All" class="explore-theme-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-saffron text-white transition-all">All Themes</button>
+            <button data-theme="Heritage India" class="explore-theme-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all">🏛 Heritage India</button>
+            <button data-theme="Spiritual India" class="explore-theme-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all">🕉 Spiritual India</button>
+            <button data-theme="Coastal India" class="explore-theme-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all">🏖 Coastal India</button>
+            <button data-theme="Himalayan Escapes" class="explore-theme-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all">🏔 Himalayan Escapes</button>
+            <button data-theme="Cultural India" class="explore-theme-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all">🎨 Cultural India</button>
+            <button data-theme="Nature & Wildlife" class="explore-theme-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all">🌿 Nature & Wildlife</button>
+            <button data-theme="Desert Adventures" class="explore-theme-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all">🏜 Desert Adventures</button>
+          </div>
+        </div>
+
+        <!-- Destination Cards Grid -->
+        <div id="explore-destinations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Injected via App.renderDestinations -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         VIEW 3: CORE FEATURE 1 — AI SMART TRIP PLANNER (#planner)
+         ----------------------------------------------------------------- -->
+    <section id="view-planner" class="view-section">
+      <div class="bg-brand-navy py-12 text-white border-b border-brand-gold/20 bg-mandala-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-saffron/20 text-brand-saffron border border-brand-saffron/40 mb-2">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Core Feature 1 — AI Engine
+            </span>
+            <h1 class="font-heritage text-3xl sm:text-4xl font-bold">Plan Your Perfect Indian Journey</h1>
+            <p class="text-slate-300 text-sm mt-2">
+              Generate custom, crowd-optimized day itineraries with authentic local food trails, realistic budgets in INR, and practical cultural etiquette.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Input Form Column -->
+          <div class="lg:col-span-5">
+            <div id="planner-form-container" class="bg-white p-6 sm:p-8 rounded-3xl border border-brand-border shadow-lg">
+              <h3 class="font-heritage text-xl font-bold text-slate-900 mb-5 flex items-center gap-2">
+                <i data-lucide="sliders" class="w-5 h-5 text-brand-saffron"></i>
+                <span>Journey Preferences</span>
+              </h3>
+
+              <form id="ai-trip-planner-form" class="space-y-5">
+                
+                <!-- Destination Selection -->
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Destination in India</label>
+                  <select id="planner-destination" class="w-full bg-brand-sand border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-medium text-slate-900 focus:outline-none focus:border-brand-saffron">
+                    <option value="Hyderabad">Charminar & Old Hyderabad (Telangana)</option>
+                    <option value="Agra">Taj Mahal & Agra Fort (Uttar Pradesh)</option>
+                    <option value="Varanasi">Varanasi Ghats & Kashi (Uttar Pradesh)</option>
+                    <option value="Hampi">Hampi Ruins of Vijayanagara (Karnataka)</option>
+                    <option value="Jaipur">Jaipur The Pink City (Rajasthan)</option>
+                    <option value="Kerala">Alleppey & Kumarakom Backwaters (Kerala)</option>
+                    <option value="Ladakh">Leh & Nubra Valley (Ladakh)</option>
+                    <option value="Goa">Old Goa & South Beaches (Goa)</option>
+                    <option value="Tirupati">Tirupati Balaji & Tirumala (Andhra Pradesh)</option>
+                    <option value="Kaziranga">Kaziranga National Park (Assam)</option>
+                    <option value="Jaisalmer">Jaisalmer Golden Fort & Thar Dunes (Rajasthan)</option>
+                    <option value="Konark">Konark Sun Temple & Puri Beach (Odisha)</option>
+                  </select>
+                </div>
+
+                <!-- Number of Days Slider -->
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <label class="text-xs font-bold text-slate-700 uppercase tracking-wider">Number of Days</label>
+                    <span id="planner-days-display" class="text-xs font-bold text-brand-saffronDark bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                      3 Days
+                    </span>
+                  </div>
+                  <input type="range" id="planner-days" min="1" max="7" value="3" class="w-full accent-brand-saffron cursor-pointer">
+                  <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                    <span>1 Day</span>
+                    <span>3 Days</span>
+                    <span>5 Days</span>
+                    <span>7 Days</span>
+                  </div>
+                </div>
+
+                <!-- Budget Tier -->
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Budget Experience Tier</label>
+                  <select id="planner-budget" class="w-full bg-brand-sand border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-medium text-slate-900 focus:outline-none focus:border-brand-saffron">
+                    <option value="Budget">Backpacker / Budget Friendly (₹2,200/day)</option>
+                    <option value="Moderate" selected>Balanced Cultural Explorer (₹4,800/day)</option>
+                    <option value="Luxury">Royal Heritage & Premium (₹12,500/day)</option>
+                  </select>
+                </div>
+
+                <!-- Number of Travelers -->
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Travelers</label>
+                  <select id="planner-travelers" class="w-full bg-brand-sand border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-medium text-slate-900 focus:outline-none focus:border-brand-saffron">
+                    <option value="Solo Explorer">Solo Explorer</option>
+                    <option value="2 Travelers" selected>2 Travelers (Couple / Friends)</option>
+                    <option value="Family (3-4)">Family with Children (3-4)</option>
+                    <option value="Group (5+)">Group Expedition (5+)</option>
+                  </select>
+                </div>
+
+                <!-- Travel Interests Pills -->
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Travel Interests</label>
+                  <div class="flex flex-wrap gap-2">
+                    <button type="button" data-interest="History" class="planner-interest-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white border border-amber-600 transition-colors">
+                      🏛 History & Heritage
+                    </button>
+                    <button type="button" data-interest="Food" class="planner-interest-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white border border-amber-600 transition-colors">
+                      🍛 Authentic Food Trails
+                    </button>
+                    <button type="button" data-interest="Nature" class="planner-interest-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 transition-colors">
+                      🌿 Nature & Wildlife
+                    </button>
+                    <button type="button" data-interest="Spiritual" class="planner-interest-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 transition-colors">
+                      🕉 Spiritual & Yoga
+                    </button>
+                    <button type="button" data-interest="Shopping" class="planner-interest-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 transition-colors">
+                      🛍 Local Handlooms & Bazaars
+                    </button>
+                    <button type="button" data-interest="Adventure" class="planner-interest-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 transition-colors">
+                      🚵 Adventure & Treks
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-brand-saffron via-amber-400 to-brand-gold text-slate-950 font-bold text-sm shadow-lg shadow-brand-saffron/30 hover:opacity-95 transition-all flex items-center justify-center gap-2">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  <span>Generate My Journey ✨</span>
+                </button>
+
+              </form>
+            </div>
+          </div>
+
+          <!-- Output / Loading Column -->
+          <div class="lg:col-span-7">
+            
+            <!-- Loading State -->
+            <div id="planner-loading" class="bg-white p-8 rounded-3xl border border-brand-border shadow-md text-center py-16 hidden">
+              <div class="w-16 h-16 mx-auto rounded-full bg-brand-saffron/20 border-2 border-brand-saffron text-brand-saffron flex items-center justify-center animate-spin mb-4">
+                <i data-lucide="loader-2" class="w-8 h-8"></i>
+              </div>
+              <h4 class="font-heritage text-xl font-bold text-slate-900">Synthesizing Your Indian Journey</h4>
+              <p id="planner-step-text" class="text-xs text-slate-500 mt-2 font-medium">Connecting to Indian Tourism Knowledge Graph...</p>
+              
+              <div class="w-64 mx-auto bg-slate-100 rounded-full h-2 mt-6 overflow-hidden border border-slate-200">
+                <div id="planner-progress-bar" class="h-full bg-gradient-to-r from-brand-saffron to-brand-gold transition-all duration-300 w-1/4"></div>
+              </div>
+            </div>
+
+            <!-- Initial Empty State Placeholder -->
+            <div id="planner-initial-state" class="bg-white p-8 rounded-3xl border border-dashed border-slate-300 text-center py-16">
+              <div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 mx-auto flex items-center justify-center mb-4">
+                <i data-lucide="map" class="w-7 h-7"></i>
+              </div>
+              <h4 class="font-heritage text-lg font-bold text-slate-800">Your AI Itinerary Will Appear Here</h4>
+              <p class="text-xs text-slate-500 max-w-sm mx-auto mt-2">
+                Select your destination and travel interests on the left, then click <strong>"Generate My Journey"</strong> to synthesize your custom plan.
+              </p>
+            </div>
+
+            <!-- Result Itinerary Container -->
+            <div id="planner-result" class="hidden">
+              <div id="planner-result-content"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         VIEW 4: CORE FEATURE 2 — AI HERITAGE & CULTURAL SCANNER (#scanner)
+         ----------------------------------------------------------------- -->
+    <section id="view-scanner" class="view-section">
+      <div class="bg-brand-navy py-12 text-white border-b border-brand-gold/20 bg-mandala-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-gold/20 text-brand-gold border border-brand-gold/40 mb-2">
+              <i data-lucide="scan" class="w-3.5 h-3.5"></i> Core Feature 2 — Vision Intelligence
+            </span>
+            <h1 class="font-heritage text-3xl sm:text-4xl font-bold">Point. Scan. Discover India's Story.</h1>
+            <p class="text-slate-300 text-sm mt-2">
+              Futuristic camera scanning UI powered by simulated architectural vision. Point your device at any heritage landmark to extract its architectural secrets and listen to verified audio guides.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Preset Landmark Switcher & Upload Pill Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1">Demo Landmark Scans:</span>
+            <button data-landmark="charminar" class="scanner-preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-600 text-white border border-amber-600 transition-all shadow-sm">
+              Charminar
+            </button>
+            <button data-landmark="taj-mahal" class="scanner-preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">
+              Taj Mahal
+            </button>
+            <button data-landmark="hampi" class="scanner-preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">
+              Hampi Virupaksha
+            </button>
+            <button data-landmark="konark" class="scanner-preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">
+              Konark Sun Temple
+            </button>
+            <button data-landmark="mysore-palace" class="scanner-preset-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">
+              Mysore Palace
+            </button>
+          </div>
+
+          <!-- File Upload Trigger -->
+          <div>
+            <label class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold flex items-center gap-2 cursor-pointer transition-colors shadow-sm">
+              <i data-lucide="upload" class="w-3.5 h-3.5 text-brand-gold"></i>
+              <span>Upload Custom Photo</span>
+              <input type="file" id="scanner-file-input" accept="image/*" class="hidden">
+            </label>
+          </div>
+        </div>
+
+        <!-- Scanner Main Two-Column View -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Viewfinder Column (Left) -->
+          <div class="lg:col-span-5">
+            <div class="bg-brand-navy rounded-3xl p-3 border border-brand-gold/40 shadow-2xl overflow-hidden relative">
+              
+              <!-- Camera HUD Frame -->
+              <div class="relative h-80 sm:h-96 rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center">
+                <!-- Preview Image -->
+                <img id="scanner-viewfinder-img" src="https://images.unsplash.com/photo-1572445271230-a78b5944a659?auto=format&fit=crop&w=1000&q=80" alt="Monument Viewfinder" class="w-full h-full object-cover">
+                
+                <!-- Reticle HUD corners -->
+                <div class="reticle-corner reticle-tl"></div>
+                <div class="reticle-corner reticle-tr"></div>
+                <div class="reticle-corner reticle-bl"></div>
+                <div class="reticle-corner reticle-br"></div>
+
+                <!-- Laser scanning beam -->
+                <div id="scanner-laser-line" class="scanner-laser hidden"></div>
+
+                <!-- Shimmer AI mesh overlay -->
+                <div id="scanner-shimmer-box" class="absolute inset-0 ai-shimmer hidden pointer-events-none"></div>
+
+                <!-- Top HUD Info Pill -->
+                <div class="absolute top-4 left-4 right-4 flex items-center justify-between text-xs text-white pointer-events-none">
+                  <span class="px-2.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 font-mono text-[10px] flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> REC • 4K AI-VISION
+                  </span>
+                  <span id="scanner-confidence" class="px-2.5 py-1 rounded-full bg-emerald-500/80 backdrop-blur-md font-bold text-[10px] text-white">
+                    99.4% Verified
+                  </span>
+                </div>
+
+                <!-- Center Crosshair -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div class="w-16 h-16 border border-brand-saffron/50 rounded-full flex items-center justify-center">
+                    <div class="w-2 h-2 bg-brand-saffron rounded-full"></div>
+                  </div>
+                </div>
+
+                <!-- Bottom Status Pill -->
+                <div class="absolute bottom-4 left-4 right-4">
+                  <div id="scanner-status-pill" class="bg-slate-900/90 backdrop-blur-md border border-brand-gold/30 rounded-xl px-3 py-2 flex items-center justify-center gap-2 text-center">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span class="text-emerald-300 text-xs font-semibold">ASI & Heritage Registry Match: 99.4% Confidence</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Camera Controls Bar -->
+              <div class="mt-3 px-2 py-2 flex items-center justify-between text-xs text-slate-300">
+                <span class="flex items-center gap-1.5">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Archaeological Survey of India Reference</span>
+                </span>
+                <button onclick="HeritageScanner.triggerScan(HeritageScanner.currentLandmarkId)" class="px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors flex items-center gap-1">
+                  <i data-lucide="refresh-cw" class="w-3 h-3"></i> Rescan
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Dossier & Audio Guide Column (Right) -->
+          <div class="lg:col-span-7">
+            <div id="scanner-details-content" class="bg-white p-6 sm:p-8 rounded-3xl border border-brand-border shadow-lg transition-opacity">
+              
+              <!-- Header & Audio Guide Action -->
+              <div class="flex flex-wrap items-start justify-between gap-4 pb-5 border-b border-slate-100">
+                <div>
+                  <span id="scanner-dossier-city" class="text-xs font-bold uppercase tracking-wider text-brand-saffronDark">
+                    Hyderabad, Telangana
+                  </span>
+                  <h3 id="scanner-dossier-name" class="font-heritage text-2xl sm:text-3xl font-bold text-slate-900 mt-1">
+                    Charminar
+                  </h3>
+                </div>
+
+                <!-- Functional Audio Guide Controls -->
+                <div class="flex items-center gap-2">
+                  <button id="scanner-audio-btn" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-amber-600 text-white font-bold text-xs flex items-center gap-2 transition-colors shadow-md">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                    <span>Listen to Audio Guide</span>
+                  </button>
+                  <button id="scanner-rate-btn" class="px-2.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-colors" title="Speed Toggle">
+                    1.0x
+                  </button>
+                </div>
+              </div>
+
+              <!-- Animated Sound Wave (Visible when speaking) -->
+              <div id="scanner-audio-wave" class="hidden my-3 p-3 bg-amber-50 rounded-xl border border-amber-200 flex items-center justify-between">
+                <span class="text-xs font-bold text-amber-900 flex items-center gap-2">
+                  <i data-lucide="radio" class="w-4 h-4 text-brand-saffron animate-pulse"></i>
+                  Audio Guide Playing...
+                </span>
+                <div class="flex items-center gap-1 h-6">
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                  <div class="wave-bar"></div>
+                </div>
+              </div>
+
+              <!-- Key Metadata Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-5">
+                <div class="bg-brand-sand p-3 rounded-xl border border-brand-border">
+                  <span class="text-[11px] text-slate-500 font-medium block">Historical Era</span>
+                  <span id="scanner-dossier-era" class="text-xs font-bold text-slate-900 mt-0.5 block">1591 CE — Qutb Shahi</span>
+                </div>
+                <div class="bg-brand-sand p-3 rounded-xl border border-brand-border">
+                  <span class="text-[11px] text-slate-500 font-medium block">Architectural Style</span>
+                  <span id="scanner-dossier-arch" class="text-xs font-bold text-slate-900 mt-0.5 block">Indo-Islamic Deccani</span>
+                </div>
+                <div class="bg-brand-sand p-3 rounded-xl border border-brand-border">
+                  <span class="text-[11px] text-slate-500 font-medium block">Primary Material</span>
+                  <span id="scanner-dossier-material" class="text-xs font-bold text-slate-900 mt-0.5 block">Granite & Lime Mortar</span>
+                </div>
+              </div>
+
+              <!-- Overview Text -->
+              <div class="space-y-4 text-sm text-slate-700">
+                <div>
+                  <h4 class="font-heritage text-sm font-bold text-slate-900 uppercase tracking-wider mb-1">Historical Overview</h4>
+                  <p id="scanner-dossier-overview" class="leading-relaxed text-xs sm:text-sm text-slate-600"></p>
+                </div>
+
+                <div>
+                  <h4 class="font-heritage text-sm font-bold text-slate-900 uppercase tracking-wider mb-1">Cultural Importance</h4>
+                  <p id="scanner-dossier-cultural" class="leading-relaxed text-xs sm:text-sm text-slate-600"></p>
+                </div>
+
+                <!-- Key Architectural Features -->
+                <div>
+                  <h4 class="font-heritage text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Key Architectural Features</h4>
+                  <ul id="scanner-dossier-features" class="grid grid-cols-1 sm:grid-cols-2 gap-2"></ul>
+                </div>
+
+                <!-- Hidden Secrets & Folklore -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
+                  <div class="flex items-start gap-2.5">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                    <div>
+                      <h5 class="text-xs font-bold text-amber-900 uppercase tracking-wider">Folklore & Architectural Secrets</h5>
+                      <p id="scanner-dossier-secrets" class="text-xs text-amber-800 mt-1 leading-relaxed"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         VIEW 5: CORE FEATURE 3 — MULTILINGUAL AI TRAVEL ASSISTANT (#assistant)
+         ----------------------------------------------------------------- -->
+    <section id="view-assistant" class="view-section">
+      <div class="bg-brand-navy py-12 text-white border-b border-brand-gold/20 bg-mandala-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-green/20 text-emerald-400 border border-brand-green/40 mb-2">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i> Core Feature 3 — Multilingual Intelligence
+            </span>
+            <h1 class="font-heritage text-3xl sm:text-4xl font-bold">Your AI Travel Companion</h1>
+            <p class="text-slate-300 text-sm mt-2">
+              "India speaks many languages. IND Travel helps you understand them."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Chat Application Box -->
+        <div class="bg-white rounded-3xl border border-brand-border shadow-2xl overflow-hidden flex flex-col h-[640px]">
+          
+          <!-- Chat Top Header -->
+          <div class="bg-brand-navy p-4 px-6 text-white flex items-center justify-between border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-saffron to-brand-gold flex items-center justify-center text-slate-950 font-bold shadow-md">
+                <i data-lucide="bot" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-heritage text-base font-bold text-white flex items-center gap-2">
+                  IND Travel AI Assistant
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                </h4>
+                <p class="text-[11px] text-slate-300">10 Indian Languages • 3 Global Languages • Real-time Voice</p>
+              </div>
+            </div>
+
+            <!-- Controls: Language Selector & Voice Output Toggle -->
+            <div class="flex items-center gap-2">
+              <button id="chat-voice-toggle" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs transition-colors" title="Toggle Voice Readout">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+              </button>
+
+              <select id="chat-language-select" class="bg-white/10 text-white text-xs font-semibold py-1.5 px-3 rounded-xl border border-white/20 focus:outline-none focus:border-brand-saffron cursor-pointer">
+                <option value="English" class="text-slate-900">English</option>
+                <option value="Hindi" class="text-slate-900">हिंदी (Hindi)</option>
+                <option value="Telugu" class="text-slate-900">తెలుగు (Telugu)</option>
+                <option value="Tamil" class="text-slate-900">தமிழ் (Tamil)</option>
+                <option value="Kannada" class="text-slate-900">ಕನ್ನಡ (Kannada)</option>
+                <option value="Malayalam" class="text-slate-900">മലയാളം (Malayalam)</option>
+                <option value="Bengali" class="text-slate-900">বাংলা (Bengali)</option>
+                <option value="Marathi" class="text-slate-900">मराठी (Marathi)</option>
+                <option value="Gujarati" class="text-slate-900">ગુજરાતી (Gujarati)</option>
+                <option value="Punjabi" class="text-slate-900">ਪੰਜਾਬੀ (Punjabi)</option>
+                <option value="French" class="text-slate-900">Français (French)</option>
+                <option value="German" class="text-slate-900">Deutsch (German)</option>
+                <option value="Spanish" class="text-slate-900">Español (Spanish)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Quick Suggestion Prompt Chips -->
+          <div class="bg-amber-50/70 px-4 py-2 border-b border-amber-200/60 overflow-x-auto flex items-center gap-2 shrink-0">
+            <span class="text-[11px] font-bold text-amber-900 uppercase tracking-wider shrink-0">Quick Queries:</span>
+            <button class="chat-quick-prompt text-xs bg-white text-slate-700 px-3 py-1 rounded-full border border-amber-200 hover:border-amber-400 hover:bg-amber-100 transition-colors whitespace-nowrap">
+              🛺 How can I reach Charminar from airport?
+            </button>
+            <button class="chat-quick-prompt text-xs bg-white text-slate-700 px-3 py-1 rounded-full border border-amber-200 hover:border-amber-400 hover:bg-amber-100 transition-colors whitespace-nowrap">
+              🕉 Temple dress codes in South India
+            </button>
+            <button class="chat-quick-prompt text-xs bg-white text-slate-700 px-3 py-1 rounded-full border border-amber-200 hover:border-amber-400 hover:bg-amber-100 transition-colors whitespace-nowrap">
+              🍛 Authentic street food safety tips
+            </button>
+            <button class="chat-quick-prompt text-xs bg-white text-slate-700 px-3 py-1 rounded-full border border-amber-200 hover:border-amber-400 hover:bg-amber-100 transition-colors whitespace-nowrap">
+              🚆 Explain RAC vs Waitlist train tickets
+            </button>
+            <button class="chat-quick-prompt text-xs bg-white text-slate-700 px-3 py-1 rounded-full border border-amber-200 hover:border-amber-400 hover:bg-amber-100 transition-colors whitespace-nowrap">
+              🛡 What is the 24x7 Tourist Helpline?
+            </button>
+          </div>
+
+          <!-- Messages Chat History -->
+          <div id="chat-messages-container" class="flex-1 p-6 overflow-y-auto bg-brand-ivory space-y-4">
+            <!-- Initial Greeting -->
+            <div class="flex justify-start">
+              <div class="flex items-start gap-3 max-w-[90%] md:max-w-[75%]">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-slate-900 to-indigo-900 border border-amber-400/40 text-amber-400 flex items-center justify-center shrink-0 shadow-sm text-xs font-bold font-heritage">
+                  IND
+                </div>
+                <div class="bg-white border border-amber-900/10 rounded-2xl rounded-tl-none px-5 py-4 shadow-sm text-sm text-slate-800 space-y-2">
+                  <p class="font-semibold text-slate-900">
+                    Namaste! 🙏 Welcome to IND Travel — your AI Companion for navigating India.
+                  </p>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    I can help you with transit routes, authentic local dishes, temple etiquette, train bookings (RAC/WL), and emergency services across all Indian states in 13 languages.
+                  </p>
+                  <div class="flex items-center justify-between border-t border-slate-100 pt-2 mt-2">
+                    <span class="text-[10px] text-slate-400 font-medium">IND Travel Unified Knowledge Graph</span>
+                    <span class="text-[10px] text-slate-400">Ready</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Input Form & Microphone -->
+          <div class="p-4 bg-white border-t border-slate-200">
+            <form id="ai-chat-form" class="flex items-center gap-2">
+              
+              <!-- Voice Microphone Button -->
+              <button type="button" id="chat-mic-btn" class="w-11 h-11 rounded-2xl bg-brand-sand hover:bg-amber-100 text-slate-700 flex items-center justify-center transition-colors border border-slate-300" title="Voice Input (Speech Recognition)">
+                <i data-lucide="mic" class="w-5 h-5"></i>
+              </button>
+
+              <!-- Text Input -->
+              <input 
+                type="text" 
+                id="chat-input" 
+                placeholder="Ask anything about traveling in India..." 
+                class="flex-1 bg-brand-sand border border-slate-300 rounded-2xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-brand-saffron"
+              >
+
+              <!-- Send Button -->
+              <button type="submit" class="px-5 py-2.5 rounded-2xl bg-brand-navy hover:bg-brand-saffron hover:text-slate-950 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-md">
+                <span>Send</span>
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         VIEW 6: CORE FEATURE 4 — SMART TOURIST SAFETY GUARDIAN (#safety)
+         ----------------------------------------------------------------- -->
+    <section id="view-safety" class="view-section">
+      <div class="bg-brand-navy py-12 text-white border-b border-brand-gold/20 bg-mandala-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-500/20 text-red-300 border border-red-500/40 mb-2">
+              <i data-lucide="shield" class="w-3.5 h-3.5"></i> Core Feature 4 — Tourist Safety Layer
+            </span>
+            <h1 class="font-heritage text-3xl sm:text-4xl font-bold">Travel With Confidence</h1>
+            <p class="text-slate-300 text-sm mt-2">
+              Unified emergency services, nearby police & medical facilities locator, live location tracking, and verified helpline connectivity.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Live Status Card & Main SOS Trigger -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-8">
+          
+          <!-- Live Status -->
+          <div class="lg:col-span-8 bg-white p-6 sm:p-8 rounded-3xl border border-brand-border shadow-lg">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 rounded-full bg-emerald-500 safe-dot"></span>
+                <div>
+                  <h3 class="font-heritage text-lg font-bold text-slate-900">Safety Status: 🟢 SAFE</h3>
+                  <p class="text-xs text-slate-500">Verified Tourist Patrol Active in this Zone</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span id="safety-current-location-text" class="text-xs font-bold text-slate-900 block">
+                  Hyderabad (Near Charminar Old City)
+                </span>
+                <span id="safety-current-coords-text" class="text-[11px] text-slate-400 font-mono">
+                  GPS: 17.3616° N, 78.4747° E
+                </span>
+              </div>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
+              <button id="btn-share-location" class="p-3 rounded-2xl bg-brand-sand hover:bg-amber-100 text-slate-800 text-xs font-semibold flex flex-col items-center gap-1.5 transition-colors border border-slate-200">
+                <i data-lucide="share-2" class="w-5 h-5 text-brand-saffron"></i>
+                <span>Share Live Location</span>
+              </button>
+              <button onclick="SafetyGuardian.renderFacilities('police')" class="p-3 rounded-2xl bg-brand-sand hover:bg-blue-100 text-slate-800 text-xs font-semibold flex flex-col items-center gap-1.5 transition-colors border border-slate-200">
+                <i data-lucide="shield" class="w-5 h-5 text-blue-600"></i>
+                <span>Nearby Police</span>
+              </button>
+              <button onclick="SafetyGuardian.renderFacilities('hospital')" class="p-3 rounded-2xl bg-brand-sand hover:bg-red-100 text-slate-800 text-xs font-semibold flex flex-col items-center gap-1.5 transition-colors border border-slate-200">
+                <i data-lucide="cross" class="w-5 h-5 text-red-600"></i>
+                <span>Nearby Hospitals</span>
+              </button>
+              <button onclick="window.App.showToast('Dialing Ministry of Tourism Helpline: 1363', 'info')" class="p-3 rounded-2xl bg-brand-sand hover:bg-emerald-100 text-slate-800 text-xs font-semibold flex flex-col items-center gap-1.5 transition-colors border border-slate-200">
+                <i data-lucide="phone-call" class="w-5 h-5 text-emerald-600"></i>
+                <span>Helpline 1363</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Big Emergency SOS Button Card -->
+          <div class="lg:col-span-4 bg-gradient-to-br from-red-600 via-red-700 to-rose-900 rounded-3xl p-6 sm:p-8 text-white shadow-2xl text-center relative overflow-hidden">
+            <div class="relative z-10">
+              <span class="text-[10px] uppercase font-bold tracking-widest bg-red-950/40 text-red-200 px-3 py-1 rounded-full border border-red-400/30">
+                Emergency Response Layer
+              </span>
+              <h4 class="font-heritage text-xl font-bold mt-3">Tourist SOS Distress</h4>
+              <p class="text-xs text-red-100 mt-1">One-touch simulated coordinates capture and contact dispatch.</p>
+              
+              <div class="my-6 flex justify-center">
+                <button class="btn-trigger-sos sos-pulse-btn w-24 h-24 rounded-full bg-white text-red-700 font-extrabold text-2xl flex flex-col items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-transform">
+                  <span>SOS</span>
+                  <span class="text-[9px] font-sans font-bold -mt-1 tracking-wider">ALERT</span>
+                </button>
+              </div>
+
+              <p class="text-[10px] text-red-200/80">
+                *Prototype Demonstration Only. Does not dispatch real police.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Verified Emergency Numbers Grid -->
+        <div class="mb-8">
+          <h4 class="font-heritage text-lg font-bold text-slate-900 mb-4">Official 24x7 Verified Indian Helplines</h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 font-bold flex items-center justify-center shrink-0">
+                112
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-900 block">National Emergency</span>
+                <span class="text-[11px] text-slate-500">Police, Fire & Medical</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 font-bold flex items-center justify-center shrink-0">
+                1363
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-900 block">Tourist Helpline</span>
+                <span class="text-[11px] text-slate-500">Ministry of Tourism (12 langs)</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-800 font-bold flex items-center justify-center shrink-0">
+                1090
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-900 block">Women Safety</span>
+                <span class="text-[11px] text-slate-500">National Women Powerline</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center shrink-0">
+                108
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-900 block">Disaster & Trauma</span>
+                <span class="text-[11px] text-slate-500">Free Ambulance Dispatch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nearby Facilities Directory Section -->
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="font-heritage text-lg font-bold text-slate-900">Nearby Security & Medical Infrastructure</h4>
+            <div class="flex items-center gap-2">
+              <button data-facility="police" class="safety-facility-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-900 text-white shadow-sm">
+                Police Stations
+              </button>
+              <button data-facility="hospital" class="safety-facility-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 shadow-sm">
+                Trauma Hospitals
+              </button>
+            </div>
+          </div>
+
+          <div id="safety-facilities-list" class="space-y-3">
+            <!-- Populated via SafetyGuardian.renderFacilities -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         VIEW 7: CORE FEATURE 5 — SMART TOURISM INTELLIGENCE DASHBOARD (#intelligence)
+         ----------------------------------------------------------------- -->
+    <section id="view-intelligence" class="view-section">
+      <div class="bg-brand-navy py-12 text-white border-b border-brand-gold/20 bg-mandala-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 mb-2">
+              <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i> Smart India Hackathon Differentiator
+            </span>
+            <h1 class="font-heritage text-3xl sm:text-4xl font-bold">Tourism Intelligence Dashboard</h1>
+            <p class="text-slate-300 text-sm mt-2">
+              Prototype — Demonstration Data for Sustainable Tourism Governance & Crowd Awareness.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Live Monitored Destination Hotspots (Crowd Status Badges) -->
+        <div class="mb-8">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-heritage text-base font-bold text-slate-900">Active Heritage Hotspot Telemetry</h4>
+            <span class="text-xs text-slate-500 font-mono">Updated Every 60s (Simulated Feed)</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <button data-hotspot="taj-mahal" class="intelligence-hotspot-btn p-4 rounded-2xl bg-white border border-amber-500 bg-amber-50/50 shadow-sm text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900">Taj Mahal</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-100 text-red-700">🔴 92% High</span>
+              </div>
+              <span class="text-[11px] text-slate-500 block mt-1">Agra • Surge Active</span>
+            </button>
+
+            <button data-hotspot="varanasi" class="intelligence-hotspot-btn p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900">Varanasi Ghats</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-100 text-red-700">🔴 88% High</span>
+              </div>
+              <span class="text-[11px] text-slate-500 block mt-1">Ganga Aarti Peak</span>
+            </button>
+
+            <button data-hotspot="charminar" class="intelligence-hotspot-btn p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900">Charminar</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">🟡 68% Mod</span>
+              </div>
+              <span class="text-[11px] text-slate-500 block mt-1">Hyderabad • Laad Bazaars</span>
+            </button>
+
+            <button data-hotspot="hampi" class="intelligence-hotspot-btn p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-left transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900">Hampi Virupaksha</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">🟢 44% Norm</span>
+              </div>
+              <span class="text-[11px] text-slate-500 block mt-1">Karnataka • Optimal</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Crowd Diversion AI Simulation Box -->
+        <div class="bg-gradient-to-br from-slate-900 via-brand-navy to-slate-900 rounded-3xl p-6 sm:p-8 text-white border border-brand-gold/40 shadow-xl mb-8">
+          <div class="flex flex-wrap items-start justify-between gap-4 border-b border-white/10 pb-5">
+            <div>
+              <span class="text-[10px] bg-brand-gold/20 text-brand-gold px-2.5 py-1 rounded-full font-bold uppercase tracking-wider border border-brand-gold/30">
+                Dynamic Crowd Mitigation Engine
+              </span>
+              <h3 id="intelligence-alert-title" class="font-heritage text-xl sm:text-2xl font-bold mt-2">
+                Taj Mahal & Agra Fort
+              </h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span id="intelligence-alert-badge" class="px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700">
+                🔴 High Crowd Detected
+              </span>
+              <button id="btn-simulate-crowd-diversion" class="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-saffron to-amber-500 text-slate-950 font-bold text-xs shadow-lg hover:opacity-95 transition-opacity flex items-center gap-1.5">
+                <i data-lucide="zap" class="w-3.5 h-3.5"></i> Simulate Crowd Diversion
+              </button>
+            </div>
+          </div>
+
+          <!-- Capacity Bar & Recommendation -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5 items-center">
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1.5">
+                <span>Sustainable Hourly Capacity</span>
+                <span id="intelligence-alert-capacity" class="font-bold text-amber-300">92% of Hourly Carrying Capacity</span>
+              </div>
+              <div class="w-full bg-white/10 h-3 rounded-full overflow-hidden">
+                <div id="intelligence-alert-capacity-bar" class="h-full bg-red-500 rounded-full transition-all duration-700" style="width: 92%"></div>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-2">
+                Threshold calculation based on ASI carrying capacity standards and gate throughput telemetry.
+              </p>
+            </div>
+
+            <div id="intelligence-alert-recommendation" class="bg-white/5 rounded-2xl p-4 border border-white/10 text-xs text-slate-200 leading-relaxed">
+              <strong>Crowd Mitigation Active:</strong> Peak surge identified. Recommend visitors divert to morning slot (06:00 AM) or visit complementary heritage circuit: <em>Mehtab Bagh Sunset View</em>. Automatic electric shuttle frequency increased by +35%.
+            </div>
+          </div>
+
+          <!-- Live Simulation Activity Log -->
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <span class="text-[11px] text-slate-400 uppercase font-bold tracking-wider block mb-2">Automated Authority Dispatch Log</span>
+            <div id="intelligence-simulation-log" class="space-y-2 max-h-36 overflow-y-auto">
+              <!-- Entries injected via TourismIntelligence.simulateCrowdDiversion -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Visual Analytics Charts (Chart.js) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          
+          <!-- Chart 1: Hourly Visitor Footfall -->
+          <div class="lg:col-span-2 bg-white p-6 rounded-3xl border border-brand-border shadow-md">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-heritage text-base font-bold text-slate-900">Hourly Footfall vs Carrying Threshold</h4>
+              <span class="text-xs text-slate-400 font-sans">Today's Aggregate</span>
+            </div>
+            <div class="h-64">
+              <canvas id="chart-hourly-footfall"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 2: Regional Distribution -->
+          <div class="bg-white p-6 rounded-3xl border border-brand-border shadow-md">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-heritage text-base font-bold text-slate-900">Regional Flow Share</h4>
+              <span class="text-xs text-slate-400 font-sans">National %</span>
+            </div>
+            <div class="h-64 flex items-center justify-center">
+              <canvas id="chart-regional-distribution"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Chart 3: Sentiment & Feedback Index -->
+        <div class="bg-white p-6 rounded-3xl border border-brand-border shadow-md">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="font-heritage text-base font-bold text-slate-900">Verified Tourist Sentiment & Satisfaction Index</h4>
+            <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+              90.8% Positive Overall
+            </span>
+          </div>
+          <div class="h-60">
+            <canvas id="chart-sentiment-trend"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         VIEW 8: VERIFIED LOCAL TOURISM NETWORK (#local)
+         ----------------------------------------------------------------- -->
+    <section id="view-local" class="view-section">
+      <div class="bg-brand-navy py-12 text-white border-b border-brand-gold/20 bg-mandala-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="text-xs text-brand-saffron font-bold uppercase tracking-wider">Grassroots Community Empowerment</span>
+            <h1 class="font-heritage text-3xl sm:text-4xl font-bold mt-1">Discover Local India</h1>
+            <p class="text-slate-300 text-sm mt-2">
+              Tourism should benefit local communities, not just corporate aggregators. Connect directly with certified guides, heritage homestays, and traditional artisans.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 mb-8">
+          <button data-category="All" class="local-filter-tab px-4 py-2 rounded-xl text-xs font-bold bg-brand-saffron text-white transition-all shadow-sm">All Communities</button>
+          <button data-category="Local Guides" class="local-filter-tab px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">Certified Guides</button>
+          <button data-category="Homestays" class="local-filter-tab px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">Heritage Homestays</button>
+          <button data-category="Artisans" class="local-filter-tab px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">Traditional Artisans</button>
+          <button data-category="Cultural Experiences" class="local-filter-tab px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">Cultural Guilds</button>
+          <button data-category="Food Trails" class="local-filter-tab px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">Food Historians</button>
+          <button data-category="Local Transport" class="local-filter-tab px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-slate-400 transition-all shadow-sm">Local Transport</button>
+        </div>
+
+        <!-- Local Network Grid -->
+        <div id="local-partners-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated via LocalNetwork.renderPartners -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         VIEW 9: INTERNATIONAL TOURIST ASSISTANCE HUB (#international)
+         ----------------------------------------------------------------- -->
+    <section id="view-international" class="view-section">
+      <div class="bg-brand-navy py-12 text-white border-b border-brand-gold/20 bg-mandala-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="text-xs text-brand-gold font-bold uppercase tracking-wider">Global Visitor Welcome Gateway</span>
+            <h1 class="font-heritage text-3xl sm:text-4xl font-bold mt-1">Welcome to India</h1>
+            <p class="text-slate-300 text-sm mt-2">
+              Currency guidance, diplomatic mission directories, cultural etiquette essentials, and offline printable travel phrase cards.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Top Row: Currency Converter & Authorized Forex Info -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+          
+          <!-- Currency Converter Card -->
+          <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-3xl border border-brand-border shadow-lg">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center">
+                <i data-lucide="coins" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-heritage text-lg font-bold text-slate-900">INR Currency Converter</h3>
+                <span class="text-xs text-slate-500">Live Indicative RBI Reference Rates</span>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Your Currency Amount</label>
+                <div class="flex gap-3">
+                  <input type="number" id="forex-amount-input" value="100" min="1" class="w-2/3 bg-brand-sand border border-slate-300 rounded-xl px-4 py-2 text-base font-bold text-slate-900 focus:outline-none focus:border-brand-saffron">
+                  <select id="forex-currency-select" class="w-1/3 bg-brand-sand border border-slate-300 rounded-xl px-3 py-2 text-sm font-bold text-slate-900 focus:outline-none focus:border-brand-saffron">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="AUD">AUD (A$)</option>
+                    <option value="CAD">CAD (C$)</option>
+                    <option value="SGD">SGD (S$)</option>
+                    <option value="JPY">JPY (¥)</option>
+                    <option value="AED">AED (د.إ)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200">
+                <span class="text-xs text-slate-600 font-medium">Estimated Value in Indian Rupees (INR):</span>
+                <div id="forex-result-inr" class="text-3xl font-extrabold text-amber-950 font-heritage mt-1">
+                  ₹8,350
+                </div>
+                <span id="forex-current-rate" class="text-[11px] text-slate-500 mt-1 block">
+                  1 USD ≈ ₹83.50 INR
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Authorized Exchange Guidance -->
+          <div class="lg:col-span-6 bg-brand-sand p-6 sm:p-8 rounded-3xl border border-brand-border flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 text-xs font-bold uppercase text-brand-navy mb-2">
+                <i data-lucide="shield-alert" class="w-4 h-4 text-brand-saffron"></i>
+                <span>Forex Safety Protocol</span>
+              </div>
+              <h3 class="font-heritage text-lg font-bold text-slate-900">Authorized Currency Exchange Guidance</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                <strong>IMPORTANT:</strong> IND Travel does NOT exchange currency. To protect against counterfeits and unlawful markups:
+              </p>
+              <ul class="space-y-2 mt-3 text-xs text-slate-700">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span>Always use <strong>RBI Authorized Full Fledged Money Changers (FFMC)</strong> or airport bank counters (SBI, ICICI).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span>Never exchange money with unauthorized street touts. Always request an official printed foreign exchange receipt.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span>Major Visa and Mastercard credit/debit cards are accepted across standard retail and dining outlets across India.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200">
+              <span class="text-[11px] text-slate-500">Foreign Exchange Management Act (FEMA) Advisory</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Middle: Essential India Cultural Etiquette Guide -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-sm mb-10">
+          <h3 class="font-heritage text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <i data-lucide="book-open" class="w-5 h-5 text-brand-saffron"></i>
+            <span>Essential India Cultural Guide & Etiquette</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-600">
+            <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-100">
+              <h5 class="font-bold text-slate-900 text-sm mb-1">👞 Footwear & Temples</h5>
+              <p class="leading-relaxed">
+                Always take off shoes and socks before entering homes and religious sanctums. Leather products (belts, wallets) may be restricted in traditional Hindu shrines.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-blue-50/50 border border-blue-100">
+              <h5 class="font-bold text-slate-900 text-sm mb-1">📶 Tourist e-SIM & Wi-Fi</h5>
+              <p class="leading-relaxed">
+                Purchase an authorized prepaid tourist SIM card at major international airport arrivals (Jio or Airtel) by presenting your passport and visa stamp.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-emerald-50/50 border border-emerald-100">
+              <h5 class="font-bold text-slate-900 text-sm mb-1">💧 Water & Street Food</h5>
+              <p class="leading-relaxed">
+                Drink bottled mineral water from reputable sealed brands (Bisleri, Kinley, Himalayan) or verified RO purifiers. Enjoy freshly cooked, piping-hot dishes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foreign Diplomatic Missions Directory -->
+        <div class="mb-10">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div>
+              <h3 class="font-heritage text-xl font-bold text-slate-900">Foreign Embassy & Consulate Finder</h3>
+              <p class="text-xs text-slate-500">Diplomatic representation and 24x7 emergency citizen services</p>
+            </div>
+            <input type="text" id="embassy-search-input" placeholder="Search country (e.g. US, UK, France)..." class="bg-white border border-slate-300 rounded-xl px-4 py-2 text-xs text-slate-900 focus:outline-none focus:border-brand-saffron w-64">
+          </div>
+
+          <div id="embassy-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Populated via InternationalHub.renderEmbassies -->
+          </div>
+        </div>
+
+        <!-- Offline Travel Essentials Card & Phrasebook -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-sm">
+          <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-4">
+            <div>
+              <h3 class="font-heritage text-xl font-bold text-slate-900">Offline Travel Essentials & Phrasebook</h3>
+              <p class="text-xs text-slate-500">Key phrases phonetically transcribed across major Indian languages</p>
+            </div>
+            <button id="btn-print-offline-card" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-brand-saffron hover:text-slate-950 text-white font-bold text-xs flex items-center gap-1.5 transition-colors">
+              <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+              <span>Print Offline Card</span>
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="bg-slate-100 text-slate-700">
+                  <th class="py-2.5 px-4 font-bold">English Phrase</th>
+                  <th class="py-2.5 px-4 font-bold">Hindi (हिंदी)</th>
+                  <th class="py-2.5 px-4 font-bold">Telugu (తెలుగు)</th>
+                  <th class="py-2.5 px-4 font-bold">Tamil (தமிழ்)</th>
+                </tr>
+              </thead>
+              <tbody id="phrasebook-table-body">
+                <!-- Populated via InternationalHub.renderPhrasebook -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER SECTION
+       ===================================================================== -->
+  <footer class="bg-brand-navy text-white border-t border-brand-gold/30 mt-auto">
+    <div class="indian-tricolor-line"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <!-- Brand Info -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-xl bg-brand-saffron text-slate-950 flex items-center justify-center font-bold font-heritage">
+              IND
+            </div>
+            <span class="font-heritage text-xl font-bold text-white">IND TRAVEL</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            "One India. One Trusted Travel Ecosystem."<br>
+            A unified digital tourism intelligence, discovery, and trust layer connecting tourists, local stakeholders, and governance.
+          </p>
+          <span class="inline-block text-[10px] text-brand-gold font-mono border border-brand-gold/30 px-2 py-0.5 rounded">
+            Smart India Hackathon Prototype
+          </span>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-heritage text-sm font-bold text-brand-gold uppercase tracking-wider mb-3">Core Modules</h4>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li><a href="#planner" data-navigate="planner" class="hover:text-brand-saffron">AI Smart Trip Planner</a></li>
+            <li><a href="#scanner" data-navigate="scanner" class="hover:text-brand-saffron">AI Heritage Scanner & Audio</a></li>
+            <li><a href="#assistant" data-navigate="assistant" class="hover:text-brand-saffron">Multilingual AI Companion</a></li>
+            <li><a href="#safety" data-navigate="safety" class="hover:text-brand-saffron">Tourist Safety Guardian</a></li>
+            <li><a href="#intelligence" data-navigate="intelligence" class="hover:text-brand-saffron">Tourism Intelligence Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Stakeholders -->
+        <div>
+          <h4 class="font-heritage text-sm font-bold text-brand-gold uppercase tracking-wider mb-3">Stakeholders</h4>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li><a href="#explore" data-navigate="explore" class="hover:text-brand-saffron">Domestic Travelers</a></li>
+            <li><a href="#international" data-navigate="international" class="hover:text-brand-saffron">International Visitors</a></li>
+            <li><a href="#local" data-navigate="local" class="hover:text-brand-saffron">Certified Guides & Artisans</a></li>
+            <li><a href="#local" data-navigate="local" class="hover:text-brand-saffron">Heritage Homestays</a></li>
+            <li><a href="#intelligence" data-navigate="intelligence" class="hover:text-brand-saffron">Tourism Authorities (Future-Ready)</a></li>
+          </ul>
+        </div>
+
+        <!-- Official Disclaimers -->
+        <div>
+          <h4 class="font-heritage text-sm font-bold text-brand-gold uppercase tracking-wider mb-3">Regulatory Clarity</h4>
+          <p class="text-[11px] text-slate-400 leading-relaxed">
+            IND Travel is a conceptual prototype created for innovation demonstration. It does not claim direct official operation by the Government of India or real-time dispatch of emergency personnel.
+          </p>
+          <div class="mt-3 text-xs text-brand-saffron">
+            <span>Helplines: <strong>112</strong> (Emergency) | <strong>1363</strong> (Tourism)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+        <p>© 2026 IND Travel Ecosystem. Designed with pride for Smart India Hackathon.</p>
+        <p class="flex items-center gap-1">
+          <span>Many Cultures. Many Journeys. One India.</span> 🇮🇳
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       MOBILE APP-LIKE BOTTOM NAVIGATION BAR
+       ===================================================================== -->
+  <div class="xl:hidden fixed bottom-0 left-0 right-0 z-40 bg-brand-navy/95 backdrop-blur-md border-t border-white/15 px-3 py-2 flex items-center justify-around text-white shadow-2xl">
+    <button data-target="home" class="mobile-nav-item active flex flex-col items-center gap-1 text-[10px] font-medium transition-colors">
+      <i data-lucide="home" class="w-4 h-4"></i>
+      <span>Home</span>
+    </button>
+    <button data-target="explore" class="mobile-nav-item flex flex-col items-center gap-1 text-[10px] font-medium transition-colors">
+      <i data-lucide="compass" class="w-4 h-4"></i>
+      <span>Explore</span>
+    </button>
+    <button data-target="planner" class="mobile-nav-item flex flex-col items-center gap-1 text-[10px] font-medium transition-colors">
+      <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
+      <span>Plan</span>
+    </button>
+    <button data-target="safety" class="mobile-nav-item flex flex-col items-center gap-1 text-[10px] font-medium transition-colors">
+      <i data-lucide="shield" class="w-4 h-4 text-red-400"></i>
+      <span>Safety</span>
+    </button>
+    <button data-target="intelligence" class="mobile-nav-item flex flex-col items-center gap-1 text-[10px] font-medium transition-colors">
+      <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+      <span>Insights</span>
+    </button>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 1: DESTINATION INSIGHTS MODAL
+       ===================================================================== -->
+  <div id="destination-detail-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden my-8 animate-fadeIn">
+      <div class="relative h-60 overflow-hidden">
+        <img id="modal-dest-image" src="" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+        <button id="btn-close-destination-modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-900/70 hover:bg-slate-900 text-white flex items-center justify-center transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+        <div class="absolute bottom-4 left-6 right-6 text-white">
+          <span id="modal-dest-state" class="text-xs font-bold text-brand-gold block"></span>
+          <h3 id="modal-dest-name" class="font-heritage text-2xl font-bold"></h3>
+          <p id="modal-dest-tagline" class="text-xs italic text-amber-200 font-serif"></p>
+        </div>
+      </div>
+
+      <div class="p-6 space-y-4 text-xs sm:text-sm text-slate-700">
+        <p id="modal-dest-desc" class="leading-relaxed"></p>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div class="bg-brand-sand p-2.5 rounded-xl border border-brand-border">
+            <span class="text-[10px] text-slate-400 block font-semibold">Best Time</span>
+            <span id="modal-dest-best-time" class="text-xs font-bold text-slate-800"></span>
+          </div>
+          <div class="bg-brand-sand p-2.5 rounded-xl border border-brand-border">
+            <span class="text-[10px] text-slate-400 block font-semibold">Climate</span>
+            <span id="modal-dest-climate" class="text-xs font-bold text-slate-800"></span>
+          </div>
+          <div class="bg-brand-sand p-2.5 rounded-xl border border-brand-border">
+            <span class="text-[10px] text-slate-400 block font-semibold">Crowd State</span>
+            <span id="modal-dest-crowd" class="text-xs font-bold text-emerald-700"></span>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="font-heritage text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">Key Highlights</h5>
+          <ul id="modal-dest-attractions" class="space-y-1"></ul>
+        </div>
+
+        <div>
+          <h5 class="font-heritage text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">Signature Delicacies</h5>
+          <div id="modal-dest-delicacies" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900">
+          <strong>Sanctum Guidelines:</strong> <span id="modal-dest-etiquette"></span>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <button onclick="App.closeDestinationModal()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs">
+            Close
+          </button>
+          <button id="modal-btn-plan" class="px-5 py-2 rounded-xl bg-gradient-to-r from-brand-saffron to-brand-gold text-slate-950 font-bold text-xs shadow-md">
+            Plan Itinerary with AI
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 2: SOS EMERGENCY ACTIVATION PROTOTYPE MODAL
+       ===================================================================== -->
+  <div id="sos-alert-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-slate-950 rounded-3xl max-w-md w-full border-2 border-red-500 shadow-2xl p-6 sm:p-8 text-white relative text-center">
+      
+      <div class="w-16 h-16 rounded-full bg-red-500/20 text-red-500 border-2 border-red-500 mx-auto flex items-center justify-center animate-pulse mb-4">
+        <i data-lucide="alert-octagon" class="w-8 h-8"></i>
+      </div>
+
+      <h3 class="font-heritage text-2xl font-bold text-white">Emergency Alert Activated</h3>
+      <p class="text-xs text-red-200 mt-1">Prototype demonstration sequence</p>
+
+      <!-- Step-by-Step Response Tracker -->
+      <div class="my-6 space-y-3.5 text-left bg-white/5 p-4 rounded-2xl border border-white/10 text-xs">
+        <div id="sos-step-1" class="flex items-center gap-2.5 text-slate-400">
+          <span class="sos-step-icon"><i data-lucide="loader" class="w-4 h-4 animate-spin text-amber-400"></i></span>
+          <span>Location Coordinates Captured</span>
+        </div>
+        <div id="sos-step-2" class="flex items-center gap-2.5 text-slate-400">
+          <span class="sos-step-icon"><i data-lucide="loader" class="w-4 h-4 animate-spin text-amber-400"></i></span>
+          <span>Emergency Contacts Notified</span>
+        </div>
+        <div id="sos-step-3" class="flex items-center gap-2.5 text-slate-400">
+          <span class="sos-step-icon"><i data-lucide="loader" class="w-4 h-4 animate-spin text-amber-400"></i></span>
+          <span>Nearby Emergency Services Identified</span>
+        </div>
+      </div>
+
+      <div class="p-3 bg-red-950/60 rounded-xl border border-red-800 text-[11px] text-red-200 text-left">
+        <strong>Captured Coordinates:</strong> <span id="sos-modal-coords" class="font-mono">17.3616° N, 78.4747° E</span><br>
+        <strong>Nearest Police Post:</strong> Charminar Tourist Police Unit (450m)
+      </div>
+
+      <div class="mt-4 p-2 bg-amber-500/10 rounded-lg border border-amber-500/30 text-[10px] text-amber-300">
+        ⚠️ Prototype demonstration only. Real emergency personnel are not contacted automatically.
+      </div>
+
+      <div class="mt-6 flex items-center gap-3">
+        <button id="btn-close-sos-modal" class="flex-1 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs transition-colors">
+          Dismiss Alert
+        </button>
+        <button onclick="window.App.showToast('Calling National Emergency: 112', 'info')" class="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center justify-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> Dial 112
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 3: LOCAL PARTNER INQUIRY & SUPPORT MODAL
+       ===================================================================== -->
+  <div id="local-inquiry-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full border border-slate-200 shadow-2xl p-6 text-slate-800">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+        <div>
+          <span class="text-[10px] uppercase font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+            Direct Community Booking
+          </span>
+          <h4 id="inquiry-partner-name" class="font-heritage text-lg font-bold text-slate-900 mt-1"></h4>
+        </div>
+        <button id="btn-close-inquiry-modal" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-4">
+        Connect directly with zero middleman commissions. 85%+ of booking proceeds stay directly with the artisan/guide family.
+      </p>
+
+      <form id="local-inquiry-form" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Your Name</label>
+          <input type="text" required placeholder="Full Name" class="w-full bg-brand-sand border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none focus:border-brand-saffron">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Phone / WhatsApp</label>
+          <input type="tel" required placeholder="+91 XXXXX XXXXX" class="w-full bg-brand-sand border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none focus:border-brand-saffron">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Estimated Visit Date & Travelers</label>
+          <input type="text" placeholder="e.g. October 15, 2 Travelers" class="w-full bg-brand-sand border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none focus:border-brand-saffron">
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-amber-600 text-white font-bold transition-colors shadow-md">
+          Send Direct Inquiry (Demo)
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 4: ROLE / PERSONA PROFILE MODAL
+       ===================================================================== -->
+  <div id="profile-role-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full border border-slate-200 shadow-2xl p-6 sm:p-8 text-slate-800">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-5">
+        <div>
+          <h4 class="font-heritage text-xl font-bold text-slate-900">Stakeholder Profile Switcher</h4>
+          <p class="text-xs text-slate-500">Explore IND Travel from different stakeholder perspectives</p>
+        </div>
+        <button id="btn-close-profile-modal" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2 mb-4">
+        <button data-role="domestic" class="profile-role-pill p-3 rounded-xl text-xs font-bold bg-amber-600 text-white text-left transition-all">
+          Domestic Tourist
+        </button>
+        <button data-role="international" class="profile-role-pill p-3 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 text-left transition-all">
+          International Visitor
+        </button>
+        <button data-role="local" class="profile-role-pill p-3 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 text-left transition-all">
+          Local Guide / Artisan
+        </button>
+        <button data-role="authority" class="profile-role-pill p-3 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 text-left transition-all">
+          Tourism Authority
+        </button>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 leading-relaxed mb-5">
+        <p id="profile-role-description">
+          Domestic Tourist Profile: Personalized state-wise itineraries, local train connectivity, regional cuisines, and verified budget stays.
+        </p>
+      </div>
+
+      <button onclick="App.closeProfileModal(); App.showToast('Switched persona view.', 'success')" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-amber-600 text-white font-bold text-xs transition-colors">
+        Confirm Persona Experience
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       TOAST NOTIFICATION CONTAINER
+       ===================================================================== -->
+  <div id="toast-container" class="fixed top-20 right-5 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
+
+  <!-- JavaScript Execution Order -->
+  <script src="js/data.js"></script>
+  <script src="js/tripPlanner.js"></script>
+  <script src="js/heritageScanner.js"></script>
+  <script src="js/aiAssistant.js"></script>
+  <script src="js/safetyGuardian.js"></script>
+  <script src="js/intelligence.js"></script>
+  <script src="js/localNetwork.js"></script>
+  <script src="js/internationalHub.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
