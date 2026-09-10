@@ -154,6 +154,10 @@ const SafetyGuardian = {
     const container = document.getElementById("safety-facilities-list");
     if (!container) return;
 
+    window.SafetyService.getSafetyInformation(this.currentCoords.locationName).then((res) => {
+      if (res.source === 'demo' && window.App) window.App.showToast("Prototype Emergency Directory Loaded.", "info");
+    });
+
     if (type === "police") {
       container.innerHTML = `
         <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">

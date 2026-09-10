@@ -13,7 +13,9 @@ const App = {
     this.renderDestinations();
     this.bindGlobalEvents();
 
-    // Initialize submodules
+    // Initialize API Client and submodules
+    this.initServices();
+
     if (window.TripPlanner) window.TripPlanner.init();
     if (window.HeritageScanner) window.HeritageScanner.init();
     if (window.AIAssistant) window.AIAssistant.init();
@@ -24,6 +26,14 @@ const App = {
 
     // Re-render Lucide icons
     if (window.lucide) window.lucide.createIcons();
+  },
+
+  async initServices() {
+    if (window.ApiClient) {
+      await window.ApiClient.init();
+      // Inject developer API status overlay
+      document.body.insertAdjacentHTML('beforeend', window.ApiClient.getApiStatusHtml());
+    }
   },
 
   setupRouting() {
@@ -112,7 +122,7 @@ const App = {
       searchInput.addEventListener("input", (e) => {
         const query = e.target.value.trim().toLowerCase();
         if (query.length > 0) {
-          const matches = IND_DATA.destinations.filter(d => 
+          const matches = IND_DATA.destinations.filter(d =>
             d.name.toLowerCase().includes(query) ||
             d.state.toLowerCase().includes(query) ||
             d.region.toLowerCase().includes(query) ||
@@ -287,10 +297,9 @@ const App = {
               <span class="text-xs font-medium text-amber-200 flex items-center gap-1">
                 <i data-lucide="calendar" class="w-3.5 h-3.5"></i> ${d.bestTime}
               </span>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                d.crowdLevel === 'High' ? 'bg-red-500/90 text-white' :
-                d.crowdLevel === 'Moderate' ? 'bg-amber-500/90 text-slate-950' : 'bg-emerald-600/90 text-white'
-              }">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${d.crowdLevel === 'High' ? 'bg-red-500/90 text-white' :
+        d.crowdLevel === 'Moderate' ? 'bg-amber-500/90 text-slate-950' : 'bg-emerald-600/90 text-white'
+      }">
                 ${d.crowdBadge}
               </span>
             </div>

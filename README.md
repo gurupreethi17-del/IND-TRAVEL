@@ -94,3 +94,24 @@ py server.py
 ### Option C: Direct Browser Opening
 Simply double-click or open `index.html` directly in Chrome, Edge, Safari, or Firefox. All assets, stylesheets, scripts, and libraries will load seamlessly!
 
+
+---
+
+## 🛠 6. Developer API Configuration & Service Architecture
+
+The IND Travel prototype now features a completely secure, modular API Service architecture that safely hides secrets from the frontend while providing a seamless Demo Fallback state if credentials are not present.
+
+### Architecture Overview
+- **Backend (`server.py`)**: Acts as a lightweight proxy and environment manager. Intercepts `/api/` calls and injects secrets without pip dependencies.
+- **Frontend (`js/services/`)**: Decentralized REST API clients (`aiService.js`, `heritageService.js`, etc.) abstracts all external network requests.
+- **UI Degradation**: If `DEMO_MODE=true` in `.env`, the API layer seamlessly intercepts the request and injects prototype data (via `js/data.js`), ensuring the application never breaks during pitches or hackathons.
+
+### Setup Instructions
+1. Copy `.env.example` and rename it to `.env`.
+2. To test with Live APIs, set `DEMO_MODE=false` and insert your respective keys:
+   ```env
+   AI_API_KEY=your_key_here
+   MAPS_API_KEY=your_key_here
+   ```
+3. Restart `server.py` for variables to take effect.
+4. An intelligent **API Status UI Badge** will appear in the bottom right corner showing the status of your services (Demo or Live).

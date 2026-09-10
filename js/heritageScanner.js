@@ -104,7 +104,8 @@ const HeritageScanner = {
       }
     }
 
-    setTimeout(() => {
+    // Fetch from Service
+    window.HeritageService.scanHeritageImage("preview_data").then((res) => {
       this.isScanning = false;
       if (laser) laser.classList.add("hidden");
       if (statusPill) {
@@ -121,7 +122,11 @@ const HeritageScanner = {
       }
 
       this.loadLandmark(landmarkId);
-    }, 700);
+
+      if (res.source === 'demo') {
+        if (window.App) window.App.showToast("Prototype Vision Fallback Data Loaded.", "info");
+      }
+    });
   },
 
   loadLandmark(landmarkId) {

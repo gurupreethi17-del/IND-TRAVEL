@@ -163,11 +163,17 @@ const AIAssistant = {
     this.addUserMessage(query);
     this.showTypingIndicator();
 
-    setTimeout(() => {
+    window.I18nService.travelAssistantResponse(query, this.currentLanguage).then((res) => {
       this.removeTypingIndicator();
-      const response = this.generateResponse(query);
-      this.addBotMessage(response);
-    }, 500);
+      let responseHtml = "";
+      if (res.source === 'live' && res.data) {
+        responseHtml = `<p class="text-slate-800">${this.escapeHtml(res.data)}</p>`;
+      } else {
+        responseHtml = this.generateResponse(query);
+        if (window.App) window.App.showToast("Prototype Demo Assistant Loaded.", "info");
+      }
+      this.addBotMessage(responseHtml);
+    });
   },
 
   addUserMessage(text) {

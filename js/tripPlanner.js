@@ -67,7 +67,7 @@ const TripPlanner = {
     if (destSelect) {
       for (let i = 0; i < destSelect.options.length; i++) {
         if (destSelect.options[i].value.toLowerCase().includes(destinationName.toLowerCase()) ||
-            destSelect.options[i].text.toLowerCase().includes(destinationName.toLowerCase())) {
+          destSelect.options[i].text.toLowerCase().includes(destinationName.toLowerCase())) {
           destSelect.selectedIndex = i;
           break;
         }
@@ -127,13 +127,24 @@ const TripPlanner = {
           currentStep++;
         } else {
           clearInterval(stepInterval);
-          setTimeout(() => {
-            if (formContainer) formContainer.classList.remove("opacity-50", "pointer-events-none");
-            loadingElem.classList.add("hidden");
-            this.renderItineraryResult(destination, days, budget, travelers, interests);
-            resultElem.classList.remove("hidden");
-            resultElem.scrollIntoView({ behavior: "smooth" });
-          }, 250);
+          // Wait for AI Service instead of direct timeout
+          window.AIService.generateTripPlan({ destination, days, budget, travelers, interests })
+            .then((itineraryResponse) => {
+              if (formContainer) formContainer.classList.remove("opacity-50", "pointer-events-none");
+              loadingElem.classList.add("hidden");
+
+              const isLive = itineraryResponse.source === 'live';
+              this.renderItineraryResult(destination, days, budget, travelers, interests, isLive, itineraryResponse.data);
+
+              resultElem.classList.remove("hidden");
+              resultElem.scrollIntoView({ behavior: "smooth" });
+
+              if (itineraryResponse.source === 'demo') {
+                if (window.App) window.App.showToast("Prototype Demo Fallback Data Loaded.", "info");
+              } else {
+                if (window.App) window.App.showToast("Generated Live AI Itinerary!", "success");
+              }
+            });
         }
       }, 300);
     }
